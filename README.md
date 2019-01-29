@@ -1,5 +1,6 @@
 DarkIce GTK2 & GTK3 theme
 ============
+Version: 1.0
 
 Based on:
 http://gnome-look.org/content/show.php/DarkCold?content=143165

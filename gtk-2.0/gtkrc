@@ -22,6 +22,7 @@ style "default"{
 
 	GtkPaned::handle_size			= 6
 	GtkScrollbar::min_slider_length		= 50
+	GtkScrollbar::activate-slider		= 1
 	GtkCheckButton::indicator_size		= 12
 	GtkCheckButton::indicator_spacing	= 3
 	GtkMenuBar::internal_padding		= 1
@@ -595,243 +596,232 @@ overlay_stretch	= FALSE
 
 style "scrollbar" = "default"
 {
-    engine "pixmap"
-    {
-
-    image
-    {
-    function	= BOX
-    detail	= "trough"
-    file		= "Scrollbars/trough-scrollbar-horiz.png"
-    border	= {16,16,2,2}
-stretch	= TRUE
-orientation = HORIZONTAL
+	engine "pixmap"	{
+image
+{
+	function	= BOX
+	detail		= "trough"
+	file		= "Scrollbars/trough-scrollbar-horiz.png"
+	border		= { 16, 16, 2, 2 }
+	stretch		= TRUE
+	orientation	= HORIZONTAL
 }
 image
 {
-    function	= BOX
-    detail	= "trough"
-    file		= "Scrollbars/trough-scrollbar-vert.png"
-    border	= {2,2,16,16}
-stretch	= TRUE
-orientation = VERTICAL
+	function	= BOX
+	detail		= "trough"
+	file		= "Scrollbars/trough-scrollbar-vert.png"
+	border		= { 2, 2, 16, 16 }
+	stretch		= TRUE
+	orientation	= VERTICAL
 }
 
-
 image
 {
-    function		= SLIDER
-    state 		= NORMAL
-    file			= "Scrollbars/slider-horiz.png"
-    border		= {2,2,2,2}
-stretch		= TRUE
-orientation	= HORIZONTAL
-orientation	= HORIZONTAL
+	function	= SLIDER
+	state 		= NORMAL
+	file		= "Scrollbars/slider-horiz.png"
+	border		= { 2, 2, 2, 2 }
+	stretch		= TRUE
+	orientation	= HORIZONTAL
 }
 image
 {
-    function		= SLIDER
-    state 		= ACTIVE
-    shadow		= IN
-    file			= "Scrollbars/slider-horiz-active.png"
-    border		= {2,2,2,2}
-stretch		= TRUE
-orientation	= HORIZONTAL
-orientation	= HORIZONTAL
+	function	= SLIDER
+	state 		= ACTIVE
+	file		= "Scrollbars/slider-horiz-pressed.png"
+	border		= { 2, 2, 2, 2 }
+	stretch		= TRUE
+	orientation	= HORIZONTAL
 }
 image
 {
-    function		= SLIDER
-    state 		= PRELIGHT
-    file			= "Scrollbars/slider-horiz-active.png"
-    border		= {2,2,2,2}
-stretch		= TRUE
-orientation	= HORIZONTAL
-orientation	= HORIZONTAL
+	function	= SLIDER
+	state 		= PRELIGHT
+	file		= "Scrollbars/slider-horiz-active.png"
+	border		= { 2, 2, 2, 2 }
+	stretch		= TRUE
+	orientation	= HORIZONTAL
 }
 image
 {
-    function		= SLIDER
-    state 		= INSENSITIVE
-    file			= "Scrollbars/slider-horiz.png"
-    border		= {2,2,2,2}
-stretch		= TRUE
-orientation	= HORIZONTAL
+	function	= SLIDER
+	state 		= INSENSITIVE
+	file		= "Scrollbars/slider-horiz.png"
+	border		= { 2, 2, 2, 2 }
+	stretch		= TRUE
+	orientation	= HORIZONTAL
 }
 
 
 image
 {
-    function		= SLIDER
-    state 		= NORMAL
-    file			= "Scrollbars/slider-vert.png"
-    border		= {2,2,2,2}
-stretch		= TRUE
-orientation	= VERTICAL
-orientation	= VERTICAL
+	function	= SLIDER
+	state 		= NORMAL
+	file		= "Scrollbars/slider-vert.png"
+	border		= { 2, 2, 2, 2 }
+	stretch		= TRUE
+	orientation	= VERTICAL
 }
 image
 {
-    function		= SLIDER
-    state 		= ACTIVE
-    shadow		= IN
-    file			= "Scrollbars/slider-vert.png"
-    border		= {2,2,2,2}
-stretch		= TRUE
-orientation	= VERTICAL
-orientation	= VERTICAL
+	function	= SLIDER
+	state 		= ACTIVE
+	file		= "Scrollbars/slider-vert-pressed.png"
+	border		= { 2, 2, 2, 2 }
+	stretch		= TRUE
+	orientation	= VERTICAL
 }
 image
 {
-    function		= SLIDER
-    state 		= PRELIGHT
-    file			= "Scrollbars/slider-vert-active.png"
-    border		= {2,2,2,2}
-stretch		= TRUE
-orientation	= VERTICAL
-orientation	= VERTICAL
+	function	= SLIDER
+	state 		= PRELIGHT
+	file		= "Scrollbars/slider-vert-active.png"
+	border		= { 2, 2, 2, 2 }
+	stretch		= TRUE
+	orientation	= VERTICAL
 }
 image
 {
-    function		= SLIDER
-    state 		= INSENSITIVE
-    file			= "Scrollbars/slider-vert.png"
-    border		= {2,2,2,2}
-stretch		= TRUE
-orientation	= VERTICAL
+	function	= SLIDER
+	state 		= INSENSITIVE
+	file		= "Scrollbars/slider-vert.png"
+	border		= { 2, 2, 2, 2 }
+	stretch		= TRUE
+	orientation	= VERTICAL
 }
 
 image
 {
-    function		= STEPPER
-    state			= NORMAL
-    file			= "Scrollbars/stepper-up.png"
-    stretch		= TRUE
-    arrow_direction	= UP
+	function	= STEPPER
+	state		= NORMAL
+	file		= "Scrollbars/stepper-up.png"
+	stretch		= TRUE
+	arrow_direction	= UP
 }
 image
 {
-    function		= STEPPER
-    state			= PRELIGHT
-    file			= "Scrollbars/stepper-up-prelight.png"
-    stretch		= TRUE
-    arrow_direction	= UP
+	function	= STEPPER
+	state		= PRELIGHT
+	file		= "Scrollbars/stepper-up-prelight.png"
+	stretch		= TRUE
+	arrow_direction	= UP
 }
 image
 {
-    function		= STEPPER
-    state			= ACTIVE
-    file			= "Scrollbars/stepper-up-prelight.png"
-    stretch		= TRUE
-    arrow_direction	= UP
+	function	= STEPPER
+	state		= ACTIVE
+	file		= "Scrollbars/stepper-up-pressed.png"
+	stretch		= TRUE
+	arrow_direction	= UP
 }
 image
 {
-    function		= STEPPER
-    state			= INSENSITIVE
-    file			= "Scrollbars/stepper-up.png"
-    stretch		= TRUE
-    arrow_direction	= UP
+	function	= STEPPER
+	state		= INSENSITIVE
+	file		= "Scrollbars/stepper-up.png"
+	stretch		= TRUE
+	arrow_direction	= UP
 }
 
 
 image
 {
-    function		= STEPPER
-    state			= NORMAL
-    file			= "Scrollbars/stepper-down.png"
-    stretch		= TRUE
-    arrow_direction	= DOWN
+	function	= STEPPER
+	state		= NORMAL
+	file		= "Scrollbars/stepper-down.png"
+	stretch		= TRUE
+	arrow_direction	= DOWN
 }
 image
 {
-    function		= STEPPER
-    state			= PRELIGHT
-    file			= "Scrollbars/stepper-down-prelight.png"
-    stretch		= TRUE
-    arrow_direction	= DOWN
+	function	= STEPPER
+	state		= PRELIGHT
+	file		= "Scrollbars/stepper-down-prelight.png"
+	stretch		= TRUE
+	arrow_direction	= DOWN
 }
 image
 {
-    function		= STEPPER
-    state			= ACTIVE
-    file			= "Scrollbars/stepper-down-prelight.png"
-    stretch		= TRUE
-    arrow_direction	= DOWN
+	function	= STEPPER
+	state		= ACTIVE
+	file		= "Scrollbars/stepper-down-pressed.png"
+	stretch		= TRUE
+	arrow_direction	= DOWN
 }
 image
 {
-    function		= STEPPER
-    state			= INSENSITIVE
-    file			= "Scrollbars/stepper-down.png"
-    stretch		= TRUE
-    arrow_direction	= DOWN
-}
-
-image
-{
-    function		= STEPPER
-    state			= NORMAL
-    file			= "Scrollbars/stepper-right.png"
-    stretch		= TRUE
-    arrow_direction	= RIGHT
-}
-image
-{
-    function		= STEPPER
-    state			= PRELIGHT
-    file			= "Scrollbars/stepper-right-prelight.png"
-    stretch		= TRUE
-    arrow_direction	= RIGHT
-}
-image
-{
-    function		= STEPPER
-    state			= ACTIVE
-    file			= "Scrollbars/stepper-right-prelight.png"
-    stretch		= TRUE
-    arrow_direction	= RIGHT
-}
-image
-{
-    function		= STEPPER
-    state			= INSENSITIVE
-    file			= "Scrollbars/stepper-right.png"
-    stretch		= TRUE
-    arrow_direction	= RIGHT
+	function	= STEPPER
+	state		= INSENSITIVE
+	file		= "Scrollbars/stepper-down.png"
+	stretch		= TRUE
+	arrow_direction	= DOWN
 }
 
 image
 {
-    function		= STEPPER
-    state			= NORMAL
-    file			= "Scrollbars/stepper-left.png"
-    stretch		= TRUE
-    arrow_direction	= LEFT
+	function	= STEPPER
+	state		= NORMAL
+	file		= "Scrollbars/stepper-right.png"
+	stretch		= TRUE
+	arrow_direction	= RIGHT
 }
 image
 {
-    function		= STEPPER
-    state			= PRELIGHT
-    file			= "Scrollbars/stepper-left-prelight.png"
-    stretch		= TRUE
-    arrow_direction	= LEFT
+	function	= STEPPER
+	state		= PRELIGHT
+	file		= "Scrollbars/stepper-right-prelight.png"
+	stretch		= TRUE
+	arrow_direction	= RIGHT
 }
 image
 {
-    function		= STEPPER
-    state			= ACTIVE
-    file			= "Scrollbars/stepper-left-prelight.png"
-    stretch		= TRUE
-    arrow_direction	= LEFT
+	function	= STEPPER
+	state		= ACTIVE
+	file		= "Scrollbars/stepper-right-pressed.png"
+	stretch		= TRUE
+	arrow_direction	= RIGHT
 }
 image
 {
-    function		= STEPPER
-    state			= INSENSITIVE
-    file			= "Scrollbars/stepper-left.png"
-    stretch		= TRUE
-    arrow_direction	= LEFT
+	function	= STEPPER
+	state		= INSENSITIVE
+	file		= "Scrollbars/stepper-right.png"
+	stretch		= TRUE
+	arrow_direction	= RIGHT
+}
+
+image
+{
+	function	= STEPPER
+	state		= NORMAL
+	file		= "Scrollbars/stepper-left.png"
+	stretch		= TRUE
+	arrow_direction	= LEFT
+}
+image
+{
+	function	= STEPPER
+	state		= PRELIGHT
+	file		= "Scrollbars/stepper-left-prelight.png"
+	stretch		= TRUE
+	arrow_direction	= LEFT
+}
+image
+{
+	function	= STEPPER
+	state		= ACTIVE
+	file		= "Scrollbars/stepper-left-pressed.png"
+	stretch		= TRUE
+	arrow_direction	= LEFT
+}
+image
+{
+	function	= STEPPER
+	state		= INSENSITIVE
+	file		= "Scrollbars/stepper-left.png"
+	stretch		= TRUE
+	arrow_direction	= LEFT
 }
 }
 }

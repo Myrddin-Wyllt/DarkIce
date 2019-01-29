@@ -732,13 +732,17 @@ scrollbar.slider.vertical:insensitive,
     border-width: 2px 8px;
 }
 scrollbar.slider.vertical:prelight,
-scrollbar.slider.vertical:prelight:active,
-.scrollbar.slider.vertical:prelight,
-.scrollbar.slider.vertical:prelight:active{
+.scrollbar.slider.vertical:prelight{
     border-image: url("darkelements/scrollbars/slider-vert-active.png") 2 8 2 8 / 2px 8px 2px 8px round stretch;
     border-width: 2px 8px;
+    transition: .3s ease-in-out;
 }
-
+scrollbar.slider.vertical:prelight:active,
+.scrollbar.slider.vertical:prelight:active{
+    border-image: url("darkelements/scrollbars/slider-vert-pressed.png") 2 8 2 8 / 2px 8px 2px 8px round stretch;
+    border-width: 2px 8px;
+    transition: .1s ease-in;
+}
 /* buttons up/down*/
 scrollbar.button.vertical,
 .scrollbar.button.vertical {
@@ -820,14 +824,20 @@ scrollbar.button.vertical:insensitive,
     border-width: 8px 2px;
 }
 
-.scrollbar.slider.horizontal:prelight,
-.scrollbar.slider.horizontal:prelight:active{
+.scrollbar.slider.horizontal:prelight{
 	border: solid;
  	border-image: url("darkelements/scrollbars/slider-horiz-active.png") 8 2 8 2 / 8px 2px 8px 2px stretch round;
     border-width: 8px 2px;
 	background-color:#000000;
+	transition: .3s ease-in-out;
 }
-
+.scrollbar.slider.horizontal:prelight:active{
+	border: solid;
+ 	border-image: url("darkelements/scrollbars/slider-horiz-pressed.png") 8 2 8 2 / 8px 2px 8px 2px stretch round;
+    border-width: 8px 2px;
+	background-color:#000000;
+	transition: .1s ease-in;
+}
 /* buttons left/right*/
 .scrollbar.button.horizontal {
 	border: 1px solid;

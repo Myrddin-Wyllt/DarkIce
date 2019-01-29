@@ -1,0 +1,15 @@
+# from DarkCold metacity to xfwm4 theme by OriginalSeed
+
+button_offset=1
+button_spacing=0
+title_horizontal_offset=0
+title_vertical_offset_active=2
+title_vertical_offset_inactive=2
+title_shadow_active=frame
+active_text_shadow_color=#002D82
+active_text_color=#6EBEFE
+title_shadow_inactive=frame
+inactive_text_shadow_color=#6EBEFE
+inactive_text_color=#001845
+show_app_icon=false
+button_layout=O|HMC

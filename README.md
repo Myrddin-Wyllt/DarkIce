@@ -5,12 +5,17 @@ Based on:
 http://gnome-look.org/content/show.php/DarkCold?content=143165
 
 Clone:
-git clone https://github.com/Myrddin-Wyllt/darkcold.git
+git clone https://github.com/Myrddin-Wyllt/DarkIce.git
 
 
-copy: 
+For Firefox, copy: 
 ```php
     userContent.css -> ~/.mozilla/firefox/<bla_bla>/chrome 
+```
+
+For Palemoon, copy:
+```php
+    userContent.css -> ~/.moonchild productions/pale moon/<bla_bla>/chrome 
 ```
 
 Changes from DarkCold:

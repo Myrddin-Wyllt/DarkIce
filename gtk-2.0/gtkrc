@@ -192,7 +192,7 @@ style "button" = "default"{
 		image{
 			function	= BOX
 			state		= ACTIVE
-			file		= "Buttons/button-prelight.png"
+			file		= "Buttons/button-pressed.png"
 			border	= {2,2,2,2}
 			stretch	= TRUE
 		}
@@ -857,91 +857,113 @@ style "range" = "default"
 {
     engine "pixmap"
     {
-    image
-    {
-    function		= BOX
-    detail		= "trough"
-    file			= "Range/trough-horizontal.png"
-    border		= {2,2,8,7}
-stretch		= TRUE
-orientation	= HORIZONTAL
+image
+{
+	function	= BOX
+	detail		= "trough"
+	file		= "Range/trough-horizontal.png"
+	border		= {2,2,8,7}
+	stretch		= TRUE
+	orientation	= HORIZONTAL
 }
 image
 {
-    function		= BOX
-    detail		= "trough"
-    file			= "Range/trough-vertical.png"
-    border		= {7,8,2,2}
-stretch		= TRUE
-orientation	= VERTICAL
-}
-
-image
-{
-    function		= SLIDER
-    state 		= NORMAL
-    file			= "Others/null.png"
-    border		= {0,0,0,0}
-stretch		= TRUE
-overlay_file	= "Range/slider-horiz.png"
-overlay_stretch	= FALSE
-orientation	= HORIZONTAL
-}
-image
-{
-    function		= SLIDER
-    state 		= PRELIGHT
-    file			= "Others/null.png"
-    border		= {0,0,0,0}
-stretch		= TRUE
-overlay_file	= "Range/slider-horiz-prelight.png"
-overlay_stretch	= FALSE
-orientation	= HORIZONTAL
-}
-image
-{
-    function		= SLIDER
-    state 		= INSENSITIVE
-    file			= "Others/null.png"
-    border		= {0,0,0,0}
-stretch		= TRUE
-overlay_file	= "Range/slider-horiz.png"
-overlay_stretch	= FALSE
-orientation	= HORIZONTAL
+	function	= BOX
+	detail		= "trough"
+	file		= "Range/trough-vertical.png"
+	border		= {7,8,2,2}
+	stretch		= TRUE
+	orientation	= VERTICAL
 }
 
 image
 {
-    function		= SLIDER
-    state 		= NORMAL
-    file			= "Others/null.png"
-    border		= {0,0,0,0}
-stretch		= TRUE
-overlay_file	= "Range/slider-vert.png"
-overlay_stretch	= FALSE
-orientation	= VERTICAL
+	function	= SLIDER
+	state 		= NORMAL
+	file		= "Others/null.png"
+	border		= {0,0,0,0}
+	stretch		= TRUE
+	overlay_file	= "Range/slider-horiz.png"
+	overlay_stretch	= FALSE
+	orientation	= HORIZONTAL
 }
 image
 {
-    function		= SLIDER
-    state 		= PRELIGHT
-    file			= "Others/null.png"
-    border		= {0,0,0,0}
-stretch		= TRUE
-overlay_file	= "Range/slider-vert-prelight.png"
-overlay_stretch	= FALSE
-orientation	= VERTICAL
+	function	= SLIDER
+	state 		= PRELIGHT
+	file		= "Others/null.png"
+	border		= {0,0,0,0}
+	stretch		= TRUE
+	overlay_file	= "Range/slider-horiz-prelight.png"
+	overlay_stretch	= FALSE
+	orientation	= HORIZONTAL
 }
 image
 {
-    function		= SLIDER
-    state 		= INSENSITIVE
-    file			= "Others/null.png"
-    border		= {0,0,0,0}
-stretch		= TRUE
-overlay_file	= "Range/slider-vert.png"
-overlay_stretch	= FALSE
-orientation	= VERTICAL
+	function	= SLIDER
+	state 		= ACTIVE
+	file		= "Others/null.png"
+	border		= {0,0,0,0}
+	stretch		= TRUE
+	overlay_file	= "Range/slider-horiz-pressed.png"
+	overlay_stretch	= FALSE
+	orientation	= HORIZONTAL
+}
+image
+{
+	function	= SLIDER
+	state 		= INSENSITIVE
+	file		= "Others/null.png"
+	border		= {0,0,0,0}
+	stretch		= TRUE
+	overlay_file	= "Range/slider-horiz.png"
+	overlay_stretch	= FALSE
+	orientation	= HORIZONTAL
+}
+
+image
+{
+	function	= SLIDER
+	state 		= NORMAL
+	file		= "Others/null.png"
+	border		= {0,0,0,0}
+	stretch		= TRUE
+	overlay_file	= "Range/slider-vert.png"
+	overlay_stretch	= FALSE
+	orientation	= VERTICAL
+}
+image
+{
+	function	= SLIDER
+	state 		= PRELIGHT
+	file		= "Others/null.png"
+	border		= {0,0,0,0}
+	stretch		= TRUE
+	overlay_file	= "Range/slider-vert-prelight.png"
+	overlay_stretch	= FALSE
+	orientation	= VERTICAL
+}
+image
+{
+	function	= SLIDER
+	state 		= ACTIVE
+	file		= "Others/null.png"
+	border		= {0,0,0,0}
+	stretch		= TRUE
+	overlay_file	= "Range/slider-vert-pressed.png"
+	overlay_stretch	= FALSE
+	orientation	= VERTICAL
+}
+image
+{
+	function	= SLIDER
+	state 		= INSENSITIVE
+	file		= "Others/null.png"
+	border		= {0,0,0,0}
+	stretch		= TRUE
+	overlay_file	= "Range/slider-vert.png"
+	overlay_stretch	= FALSE
+	orientation	= VERTICAL
 }
 }
 }

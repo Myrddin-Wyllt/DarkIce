@@ -890,9 +890,7 @@ scale.scale-has-marks-below slider.horizontal {
 	min-width: 15px;
 	min-height: 15px;
 	background-color: transparent;
-	color:transparent;
-}
-
+	color:transparent; }
 scale slider.horizontal slider:hover,
 scale.horizontal.marks-after slider:hover {
 	background-image: url("darkelements/scale/slider-horiz-prelight.png");
@@ -900,8 +898,15 @@ scale.horizontal.marks-after slider:hover {
 	min-height: 15px;
 	background-color: transparent;
 	color:transparent;
-}
-
+	transition: .3s ease-in-out; }
+scale slider.horizontal slider:hover:active,
+scale.horizontal.marks-after slider:hover:active {
+	background-image: url("darkelements/scale/slider-horiz-pressed.png");
+	min-width: 15px;
+	min-height: 15px;
+	background-color: transparent;
+	color:transparent;
+	transition: .1s ease-in; }
 scale slider:disabled,
 scale slider.horizontal:disabled,
 scale.scale-has-marks-above slider.horizontal:disabled,
@@ -921,8 +926,7 @@ scale.scale-has-marks-below slider.vertical {
 	min-width: 15px;
 	min-height: 15px;
 	background-color: transparent;
-	color:transparent;
-}
+	color:transparent; }
 scale.vertical slider:hover,
 scale slider.vertical slider:hover,
 scale.vertical.marks-after slider:hover {
@@ -931,8 +935,16 @@ scale.vertical.marks-after slider:hover {
 	min-height: 15px;
 	background-color: transparent;
 	color:transparent;
-}
-
+	transition: .3s ease-in-out; }
+scale.vertical slider:hover:active,
+scale slider.vertical slider:hover:active,
+scale.vertical.marks-after slider:hover:active {
+	background-image: url("darkelements/scale/slider-vert-pressed.png");
+	min-width: 15px;
+	min-height: 15px;
+	background-color: transparent;
+	color:transparent;
+	transition: .1s ease-in; }
 scale.vertical slider:disabled,
 scale slider.vertical:disabled,
 scale.scale-has-marks-above slider.vertical:disabled,
@@ -1646,50 +1658,38 @@ toolbar combobox button.combo,
 toolbar.primary-toolbar combobox button.combo,
 .titlebar .titlebutton,
 colorchooser #add-color-button {
-    color: @theme_text_color;
+	color: @theme_text_color;
 	border: solid;
-    background-image: url("darkelements/button-normal.png");
-    border-image: url("darkelements/button-normal-border.png") 2 2 2 2 / 2px 2px 2px 2px stretch stretch;
-    border-width:2px;
+	background-image: url("darkelements/button-normal.png");
+	border-image: url("darkelements/button-normal-border.png") 2 2 2 2 / 2px 2px 2px 2px stretch stretch;
+	border-width: 2px;
 	background-size: 100% 100%;
 	background-color: transparent;
 }
 
-/* Pushed button background */
+/* Pressed button background */
 button:checked,
-button:checked:hover,
-button:hover:active,
-menuitem button:hover,
+button:active,
+menuitem button:checked,
+menuitem button:active,
 spinbutton button:active,
-spinbutton button:active:hover,
 statusbar button:active,
-popover button:active:hover,
 combobox button.combo:checked,
 toolbar button:checked,
-toolbar button:checked:hover,
-toolbar button:hover:active,
 toolbar button.raised:checked,
 toolbar .raised button:checked,
-toolbar button.raised:hover:active,
-toolbar button.raised:checked:hover,
-toolbar .raised button:hover:active,
-toolbar .raised button:checked:hover,
 toolbar.primary-toolbar combobox button.combo:checked,
 toolbar.primary-toolbar button:checked,
-toolbar.primary-toolbar button:hover:active,
 toolbar.primary-toolbar button:focus:active,
-toolbar.primary-toolbar button:focus:hover:active,
-toolbar.inline-toolbar button:checked,
-toolbar.inline-toolbar button:hover:active,
-.titlebar .titlebutton:hover {
+toolbar.inline-toolbar button:checked {
 	border: solid;
-    background-image: url("darkelements/button-hover.png");
-    border-image: url("darkelements/button-hover-border.png") 2 2 2 2 / 2px 2px 2px 2px stretch stretch;
-    border-width:2px;
+	background-image: url("darkelements/button-pressed.png");
+	border-image: url("darkelements/button-pressed-border.png") 2 2 2 2 / 2px 2px 2px 2px stretch stretch;
+	border-width:2px;
 	background-size: 100% 100%;
 	color: @theme_text_color;
-	background-color: transparent;
-}
+	background-color: transparent; 
+	transition: .1s ease-in; }
 
 trough,
 trough highlight,
@@ -1709,6 +1709,7 @@ trough.vertical {
 
 /* Prelight button background */
 button:hover,
+menuitem button:hover,
 spinbutton button:hover,
 combobox button.combo:hover,
 toolbar button:hover,
@@ -1718,12 +1719,36 @@ toolbar combobox button.combo:hover,
 toolbar.primary-toolbar button:hover,
 toolbar.primary-toolbar combobox button.combo:hover,
 colorchooser #add-color-button:hover,
-popover.background button:hover {
+popover.background button:hover,
+.titlebar .titlebutton:hover {
 	border: solid;
-    background-image: url("darkelements/button-hover.png");
-    border-image: url("darkelements/button-hover-border.png") 2 2 2 2 / 2px 2px 2px 2px stretch stretch;
-    border-width:2px;
+	background-image: url("darkelements/button-hover.png");
+	border-image: url("darkelements/button-hover-border.png") 2 2 2 2 / 2px 2px 2px 2px stretch stretch;
+	border-width:2px;
 	background-size: 100% 100%;
+	transition: .2s ease-in-out; 
+}
+
+/* Pressed hover */
+button:hover:active,
+button:checked:hover,
+spinbutton button:active:hover,
+toolbar button:checked:hover,
+toolbar button:hover:active,
+toolbar button.raised:hover:active,
+toolbar button.raised:checked:hover,
+toolbar .raised button:hover:active,
+toolbar .raised button:checked:hover,
+toolbar.primary-toolbar button:hover:active,
+toolbar.primary-toolbar button:focus:hover:active,
+popover button:active:hover,
+toolbar.inline-toolbar button:hover:active {
+	border: solid;
+	background-image: url("darkelements/button-pressed.png");
+	border-image: url("darkelements/button-hover-border.png") 2 2 2 2 / 2px 2px 2px 2px stretch stretch;
+	border-width:2px;
+	background-size: 100% 100%;
+	transition: .2s ease-in-out; 
 }
 
 /* disabled button background */
@@ -1742,11 +1767,11 @@ toolbar combobox button.combo:checked:disabled {
 
 /* Focused primary toolbar button background */
 toolbar.primary-toolbar button:focus {
-    color: @theme_text_color;
+	color: @theme_text_color;
 	border: solid;
-    background-image: url("darkelements/button-normal.png");
-    border-image: url("darkelements/button-normal-border.png") 2 2 2 2 / 2px 2px 2px 2px stretch stretch;
-    border-width:2px;
+	background-image: url("darkelements/button-normal.png");
+	border-image: url("darkelements/button-normal-border.png") 2 2 2 2 / 2px 2px 2px 2px stretch stretch;
+	border-width:2px;
 	background-size: 100% 100%;
 	background-color: transparent;
 }
@@ -1754,10 +1779,11 @@ toolbar.primary-toolbar button:focus {
 /* Focused + prelit primary toolbar button background */
 toolbar.primary-toolbar button:focus:hover {
 	border: solid;
-    background-image: url("darkelements/button-hover.png");
-    border-image: url("darkelements/button-hover-border.png") 2 2 2 2 / 2px 2px 2px 2px stretch stretch;
-    border-width:2px;
+	background-image: url("darkelements/button-hover.png");
+	border-image: url("darkelements/button-hover-border.png") 2 2 2 2 / 2px 2px 2px 2px stretch stretch;
+	border-width:2px;
 	background-size: 100% 100%;
+	transition: .2s ease-in-out;
 }
 
 /* checkbox & radiobutton*/
@@ -2441,7 +2467,7 @@ scrollbar.horizontal .button.down:hover:active {
 	transition: .1s ease-in; 
 }
 
-/* Slider Buttons */
+/* Scrollbar Slider Buttons */
 scrollbar.vertical slider,
 scrollbar.vertical .slider {
     min-width: 16px;
@@ -3470,45 +3496,60 @@ assistant .sidebar {
  * GtkSwitch *
  *************/
 switch {
-    min-width: 74px;
-    min-height: 24px;
-    background-size: 74px 24px;
-    background-repeat: no-repeat;
+	min-width: 74px;
+	min-height: 24px;
+	background-size: 74px 24px; }
+switch slider {
+	min-width: 34px;
+	min-height: 20px;
+	background-size: 34px 20px; }
+switch, switch slider {
+	background-repeat: no-repeat;
 	background-position: center center;
 	color: transparent; /* on/off text */
 }
-
 switch {
-    background-image: url("darkelements/switch/switcher-off.png");
-    min-width: 74px;
-    min-height: 24px;
-}
-
-scale progressbar{
-
-}
-
+	background-image: url("darkelements/switch/trough-off.png");
+	min-width: 74px;
+	min-height: 24px; 
+	transition: .3s ease-out; }
 switch:checked,
 switch:backdrop:checked {
-    background-image: url("darkelements/switch/switcher-on.png");
-    min-width: 74px;
-    min-height: 24px;
-}
-
+	background-image: url("darkelements/switch/trough-on.png");
+	min-width: 74px;
+	min-height: 24px;
+	transition: .3s ease-in-out; }
 switch:disabled,
 switch:backdrop:disabled {
-
+	background-image: url("darkelements/switch/trough-off.png");
+	min-width: 74px;
+	min-height: 24px; 
 }
 
 switch slider {
-	outline-color: transparent;
-    color: transparent;
-    border: none;
-	box-shadow: none;
-}
-
-switch slider:disabled {
-
+	background-image: url("darkelements/switch/sliderswitch.png");
+	min-width: 34px;
+	min-height: 20px; }
+/* Couldn't get this working
+switch:checked slider,
+switch:backdrop:checked slider {
+	background-image: url("darkelements/switch/sliderswitcher-enabled.png");
+	min-width: 34px;
+	min-height: 20px;
+	transition: .1s ease-in; } */
+switch:hover slider,
+switch:backdrop:hover slider,
+switch:checked:hover slider,
+switch:backdrop:checked:hover slider {
+	background-image: url("darkelements/switch/sliderswitch-hover.png");
+	min-width: 34px;
+	min-height: 20px; 
+	transition: .3s ease-in-out; }
+switch:disabled slider,
+switch:backdrop:disabled slider {
+	background-image: url("darkelements/switch/sliderswitch-disabled.png");
+	min-width: 34px;
+	min-height: 20px; 
 }
 
 /**************************

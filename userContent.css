@@ -33,22 +33,12 @@
  * For more examples see http://www.mozilla.org/unix/customizing.html
  */
 
-input {
-	border: 2px inset white;
+input,
+textarea,
+select {
+	-moz-appearance: none !important;
 	background-color: white;
 	color: black;
-}
-
-textarea {
-	border: 2px inset white;
-	background-color: white;
-	color: #007AC3 ;
-}
-
-select {
-	border: 2px inset white;
-	background-color: white;
-	color: #007AC3 ;
 }
  
 input[type="radio"],
@@ -66,8 +56,6 @@ button,
 input[type="reset"],
 input[type="button"],
 input[type="submit"] { 
-    background-color: #eeeeee;
-    color: #007AC3 ;
+    background-color: black;
+    color: #6EBEFE;
 }
-
-

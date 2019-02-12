@@ -246,7 +246,7 @@ style "optionmenu" = "default"{
 		image{
 			function	= BOX
 			state		= ACTIVE
-			file		= "Buttons/button-prelight.png"
+			file		= "Buttons/button-pressed.png"
 			border	= {2,2,2,2}
 			stretch	= TRUE
 		}
@@ -490,108 +490,106 @@ stretch	= TRUE
 }
 
 
-style "spinbutton" = "entry"
+style "spinbutton"
 {
 
-
-    engine "pixmap"
-    {
-    image
-    {
-    function = ARROW
-}
-
+	engine "pixmap"
+	{
 image
 {
-    function		= BOX
-    state 		= NORMAL
-    detail		= "spinbutton_up"
-    file			= "Others/null.png"
-    border		= {0,0,0,0}
-stretch		= TRUE
-overlay_file	= "Spin/spin-up.png"
-overlay_stretch	= FALSE
-}
-image
-{
-    function		= BOX
-    state 		= PRELIGHT
-    detail		= "spinbutton_up"
-    file			= "Others/null.png"
-    border		= {0,0,0,0}
-stretch		= TRUE
-overlay_file	= "Spin/spin-up-prelight.png"
-overlay_stretch	= FALSE
-}
-image
-{
-    function		= BOX
-    state 		= INSENSITIVE
-    detail		= "spinbutton_up"
-    file			= "Others/null.png"
-    border		= {0,0,0,0}
-stretch		= TRUE
-overlay_file	= "Spin/spin-up-disable.png"
-overlay_stretch	= FALSE
-}
-image
-{
-    function		= BOX
-    state 		= ACTIVE
-    detail		= "spinbutton_up"
-    file			= "Others/null.png"
-    border		= {0,0,0,0}
-stretch		= TRUE
-overlay_file	= "Spin/spin-up-prelight.png"
-overlay_stretch	= FALSE
+function = ARROW
 }
 
 image
 {
-    function		= BOX
-    state 		= NORMAL
-    detail		= "spinbutton_down"
-    file			= "Others/null.png"
-    border		= {0,0,0,0}
-stretch		= TRUE
-overlay_file	= "Spin/spin-down.png"
-overlay_stretch	= FALSE
+	function	= BOX
+	state 		= NORMAL
+	detail		= "spinbutton_up"
+	file		= "Others/null.png"
+	border		= {0,0,0,0}
+	stretch		= TRUE
+	overlay_file	= "Scrollbars/stepper-up.png"
+	overlay_stretch	= FALSE
 }
 image
 {
-    function		= BOX
-    state 		= PRELIGHT
-    detail		= "spinbutton_down"
-    file			= "Others/null.png"
-    border		= {0,0,0,0}
-stretch		= TRUE
-overlay_file	= "Spin/spin-down-prelight.png"
-overlay_stretch	= FALSE
+	function	= BOX
+	state 		= PRELIGHT
+	detail		= "spinbutton_up"
+	file		= "Others/null.png"
+	border		= {0,0,0,0}
+	stretch		= TRUE
+	overlay_file	= "Scrollbars/stepper-up-prelight.png"
+	overlay_stretch	= FALSE
 }
 image
 {
-    function		= BOX
-    state 		= INSENSITIVE
-    detail		= "spinbutton_down"
-    file			= "Others/null.png"
-    border		= {0,0,0,0}
-stretch		= TRUE
-overlay_file	= "Spin/spin-down-disable.png"
-overlay_stretch	= FALSE
+	function	= BOX
+	state 		= ACTIVE
+	detail		= "spinbutton_up"
+	file		= "Others/null.png"
+	border		= {0,0,0,0}
+	stretch		= TRUE
+	overlay_file	= "Scrollbars/stepper-up-pressed.png"
+	overlay_stretch	= FALSE
+}
+image
+{
+	function	= BOX
+	state 		= INSENSITIVE
+	detail		= "spinbutton_up"
+	file		= "Others/null.png"
+	border		= {0,0,0,0}
+	stretch		= TRUE
+	overlay_file	= "Spin/spin-up-disable.png"
+	overlay_stretch	= FALSE
 }
 
 image
 {
-    function		= BOX
-    state 		= ACTIVE
-    detail		= "spinbutton_down"
-    file			= "Others/null.png"
-    border		= {0,0,0,0}
-stretch		= TRUE
-overlay_file	= "Spin/spin-down-prelight.png"
-overlay_stretch	= FALSE
+	function	= BOX
+	state 		= NORMAL
+	detail		= "spinbutton_down"
+	file		= "Others/null.png"
+	border		= {0,0,0,0}
+	stretch		= TRUE
+	overlay_file	= "Scrollbars/stepper-down.png"
+	overlay_stretch	= FALSE
 }
+image
+{
+	function	= BOX
+	state 		= PRELIGHT
+	detail		= "spinbutton_down"
+	file		= "Others/null.png"
+	border		= {0,0,0,0}
+	stretch		= TRUE
+	overlay_file	= "Scrollbars/stepper-down-prelight.png"
+	overlay_stretch	= FALSE
 }
+image
+{
+	function	= BOX
+	state 		= INSENSITIVE
+	detail		= "spinbutton_down"
+	file		= "Others/null.png"
+	border		= {0,0,0,0}
+	stretch		= TRUE
+	overlay_file	= "Spin/spin-down-disable.png"
+	overlay_stretch	= FALSE
+}
+image
+{
+	function	= BOX
+	state 		= ACTIVE
+	detail		= "spinbutton_down"
+	file		= "Others/null.png"
+	border		= {0,0,0,0}
+	stretch		= TRUE
+	overlay_file	= "Scrollbars/stepper-down-pressed.png"
+	overlay_stretch	= FALSE
+}
+	}
 }
 
 style "scrollbar" = "default"
@@ -1020,7 +1018,7 @@ image
 {
     function 	= BOX
     state		= ACTIVE
-    file 		= "Buttons/button-prelight.png"
+    file 		= "Buttons/button-pressed.png"
     border	= {2,2,2,2}
 stretch 	= TRUE
 }

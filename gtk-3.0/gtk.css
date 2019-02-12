@@ -630,26 +630,38 @@ undershoot.right {
  ****************/
 
 entry {
-	background-color: @theme_base_color;
-	border: solid;
-	border-color: @border_color;
+    background-color: @theme_base_color;
+    border: solid;
+    border-color: @border_color;
 	box-shadow:inset 0px 0px 0px 1px #000000;
-	border-width:1px;
+    border-width:1px;
 	background-size: 100% 100%;
-	padding: 4px 3px;
-	color: @theme_fg_color; }
+	
+    /* we use inner-border instead of padding because padding
+     * also applies to the progressbar.
+     */
+    padding: 4px 3px;
+    -GtkEntry-inner-border: 5px;
+    -GtkEntry-progress-border: 0;
+    color: @theme_fg_color;
+}
+
 entry progressbar {
-	background-color: @theme_selected_bg_color;
-	color: @theme_fg_color;
-	padding: 5px 5px;
-	border-width: 1px; }
+    background-color: @theme_selected_bg_color;
+    color: @theme_fg_color;
+
+    border-width: 1px;
+}
+
 entry selection,
 entry selection:focus,
 entry:selected {
-	color: @theme_selected_fg_color;
-	background-color: @theme_selected_bg_color; }
+    color: @theme_selected_fg_color;
+    background-color: @theme_selected_bg_color;
+}
+
 entry:disabled {
-	color: @insensitive_fg_color;
+    color: @insensitive_fg_color;
 }
 
 
@@ -1073,6 +1085,33 @@ scrolledwindow viewport.frame {
  * Buttons *
  ***********/
 
+button ,
+popover.background button {
+    padding: 3px;
+    color: @theme_text_color;
+	border: solid;
+    background-image: url("darkelements/button-normal.png");
+    border-image: url("darkelements/button-normal-border.png") 2 2 2 2 / 2px 2px 2px 2px stretch stretch;
+    border-width:2px;
+	background-size: 100% 100%;
+	background-color: transparent;
+}
+
+button:disabled,
+combobox button.combo:disabled,
+toolbar combobox button.combo:disabled,
+popover.background button:disabled {
+border: solid;
+    background-image: url("darkelements/column-header.png");
+    border-image: url("darkelements/button-normal-border.png") 2 2 2 2 / 2px 2px 2px 2px stretch stretch;
+    border-width:2px;
+    background-color: @insensitive_bg_color;
+    color: @insensitive_fg_color;
+	background-size: 100% 100%;
+	border-width: 2px;
+	border-color:transparent;
+}
+
 button,
 button.menuitem.menubar,
 .titlebar .linked.raised button,
@@ -1083,51 +1122,76 @@ button.menuitem.menubar,
 .titlebar .linked.raised button:backdrop,
 .titlebar .linked.raised button:focus:hover,
 .titlebar .linked.raised button:focus:hover:active {
-	padding: 5px 5px 6px; /* larger values makes the button arrow smaller*/ }
+
+    padding: 5px 5px 6px; /* larger values makes the button arrow smaller*/
+}
+
 toolbar.inline-toolbar button,
 toolbar.inline-toolbar button.image-button,
 toolbar.inline-toolbar button.text-button,
 toolbar.inline-toolbar button:checked,
 toolbar.inline-toolbar button.image-button:checked,
 toolbar.inline-toolbar button.text-button:checked {
+
 }
+
 toolbar.inline-toolbar button box.horizontal,
 toolbar.inline-toolbar button.image-button box.horizontal,
 toolbar.inline-toolbar button.text-button box.horizontal,
 toolbar.inline-toolbar button box.horizontal image,
 toolbar.inline-toolbar button.image-button box.horizontal image,
 toolbar.inline-toolbar button.text-button box.horizontal  image {
-	border-image: none; }
+    border-image: none;
+}
+
 toolbar.horizontal button,
 toolbar.horizontal button:checked,
 toolbar.primary-toolbar.horizontal button,
 toolbar.primary-toolbar.horizontal button:checked {
 	padding:2px 2px 2px 2px;
-	border-width: 2px; }
+	border-width: 2px;
+}
+
 button.default {
-	text-shadow: none;
-	color: @theme_fg_color;
+    text-shadow: none;
+    color: @theme_fg_color;
+}
+
+button.flat {
+    padding: 3px;
+    color: @theme_text_color;
+	border: solid;
+    background-image: url("darkelements/button-normal.png");
+    border-image: url("darkelements/button-normal-border.png") 2 2 2 2 / 2px 2px 2px 2px stretch stretch;
+    border-width:2px;
+	background-size: 100% 100%;
+	background-color: transparent
+}
+
+button.flat.hover {
 }
 
 button.image-button.circular-button {
-	border-image: none;
-	border-width: 1px;
-	border-style: solid;
-	border-color: @border_color; }
+   border-image: none;
+   border-width: 1px;
+   border-style: solid;
+   border-color: @border_color;
+}
 combobox entry.combo{
 	background-color: @theme_base_color;
-	border: solid;
-	border-image: url("darkelements/border-passive.png") 2 2 2 2 / 2px 2px 2px 2px stretch stretch;
-	border-width:2px;
+    border: solid;
+    border-image: url("darkelements/border-passive.png") 2 2 2 2 / 2px 2px 2px 2px stretch stretch;
+    border-width:2px;
 	background-size: 100% 100%;
-	color: @theme_fg_color; }
+	color: @theme_fg_color;
+}
 combobox button.combo,
 toolbar.horizontal combobox button.combo {
-	color: @theme_fg_color;
+    color: @theme_fg_color;
 	border: solid;
-	background-image: url("darkelements/button-normal.png");
-	border-image: url("darkelements/button-normal-border.png") 2 2 2 2 / 2px 2px 2px 2px stretch stretch;
-	border-width:2px;
+    background-image: url("darkelements/button-normal.png");
+    border-image: url("darkelements/button-normal-border.png") 2 2 2 2 / 2px 2px 2px 2px stretch stretch;
+    border-width:2px;
 	background-size: 100% 100%;
 	background-color: transparent;
 }
@@ -1188,6 +1252,17 @@ border: solid;
 
 }
 
+button {
+    padding: 3px;
+    color: @theme_text_color;
+	border: solid;
+    background-image: url("darkelements/button-normal.png");
+    border-image: url("darkelements/button-normal-border.png") 2 2 2 2 / 2px 2px 2px 2px stretch stretch;
+    border-width:2px;
+	background-size: 100% 100%;
+	background-color: transparent;
+}
+
 /* We want anything inside the buttons to use their background
 button * {
     background-color: transparent;
@@ -1206,6 +1281,37 @@ toolbar.primary-toolbar button {
     border-style: solid;
     border-width: 1px 1px 2px 1px;
     border-color: transparent;
+}
+
+toolbar.primary-toolbar button:checked,
+toolbar.inline-toolbar button:checked,
+button:checked,
+button:checked:focus,
+button:focus,
+popover.background button:focus {
+    padding: 3px;
+    color: @theme_text_color;
+	border: solid;
+    background-image: url("darkelements/button-normal.png");
+    border-image: url("darkelements/button-normal-border.png") 2 2 2 2 / 2px 2px 2px 2px stretch stretch;
+    border-width:2px;
+	background-size: 100% 100%;
+	background-color: transparent
+}
+
+button:disabled,
+button:checked:disabled,
+combobox button.combo:disabled {
+	border: solid;
+    background-image: url("darkelements/column-header.png");
+    border-image: url("darkelements/button-normal-border.png") 2 2 2 2 / 2px 2px 2px 2px stretch stretch;
+    border-width:2px;
+    background-color: @insensitive_bg_color;
+    color: @insensitive_fg_color;
+	background-size: 100% 100%;
+	border-width: 2px;
+	border-color:transparent;
+
 }
 
 button separator {
@@ -1432,14 +1538,20 @@ spinbutton:focus {
 }
 
 spinbutton entry{
-	background-color: @theme_base_color;
-	border: solid;
-	border-color: #3D3D3D;
+    background-color: @theme_base_color;
+    border: solid;
+    border-color: #3D3D3D;
 	box-shadow:inset 0px 0px 0px 1px #000000;
-	border-width:1px;
+    border-width:1px;
 	background-size: 100% 100%;
-	padding: 4px 3px;
-	color: @entry_text_colo
+	
+    /* we use inner-border instead of padding because padding
+     * also applies to the progressbar.
+     */
+    padding: 4px 3px;
+    -GtkEntry-inner-border: 5px;
+    -GtkEntry-progress-border: 0;
+    color: @entry_text_colo
 }
 
 
@@ -1529,230 +1641,65 @@ spinbutton.vertical > button:focus:active:last-child {
 
 
 /*********************
- *       Buttons     *
+ * Button background *
  *********************/
+
+/* Button background */
 button,
-button.flat,
-popover button,
-popover.background button,
-menuitem button,
 spinbutton button,
 statusbar button,
+popover button,
 combobox button.combo,
+toolbar button,
 toolbar button,
 toolbar .raised button,
 toolbar combobox button.combo,
-toolbar.inline-toolbar button,
-toolbar.primary-toolbar button,
+toolbar combobox button.combo,
 toolbar.primary-toolbar combobox button.combo,
 .titlebar .titlebutton,
 colorchooser #add-color-button {
-	padding: 3px;
 	color: @theme_text_color;
 	border: solid;
 	background-image: url("darkelements/button-normal.png");
 	border-image: url("darkelements/button-normal-border.png") 2 2 2 2 / 2px 2px 2px 2px stretch stretch;
 	border-width: 2px;
 	background-size: 100% 100%;
-	background-color: transparent; }
-/* Pressed button */
-button:active,
+	background-color: transparent;
+}
+
+/* Pressed button background */
 button:checked,
-button.flat:active,
-button.flat:checked,
-popover button:active,
-popover button:checked,
-popover.background button:active,
-popover.background button:checked,
+button:active,
 menuitem button:checked,
 menuitem button:active,
 spinbutton button:active,
-spinbutton button:checked,
 statusbar button:active,
-statusbar button:checked,
-combobox button.combo:active,
 combobox button.combo:checked,
 toolbar button:checked,
-toolbar button:active
 toolbar button.raised:checked,
-toolbar button.raised:active,
-toolbar combobox button.combo:checked,
-toolbar combobox button.combo:active,
 toolbar .raised button:checked,
-toolbar .raised button:active,
 toolbar.primary-toolbar combobox button.combo:checked,
-toolbar.primary-toolbar combobox button.combo:active,
 toolbar.primary-toolbar button:checked,
-toolbar.primary-toolbar button:active,
-toolbar.inline-toolbar button:checked,
-toolbar.inline-toolbar button:active,
-.titlebar .titlebutton:checked,
-.titlebar .titlebutton:active,
-colorchooser #add-color-button:active,
-colorchooser #add-color-button:checked {
-	color: @theme_text_color;
+toolbar.primary-toolbar button:focus:active,
+toolbar.inline-toolbar button:checked {
 	border: solid;
 	background-image: url("darkelements/button-pressed.png");
 	border-image: url("darkelements/button-pressed-border.png") 2 2 2 2 / 2px 2px 2px 2px stretch stretch;
 	border-width:2px;
 	background-size: 100% 100%;
+	color: @theme_text_color;
 	background-color: transparent; 
 	transition: .1s ease-in; }
-/* Hover button */
-button:hover,
-button.flat:hover,
-popover button:hover,
-popover.background button:hover,
-menuitem button:hover,
-spinbutton button:hover,
-statusbar button:hover,
-combobox button.combo:hover,
-toolbar button:hover,
-toolbar button.raised:hover,
-toolbar combobox button.combo:hover,
-toolbar .raised button:hover,
-toolbar.inline-toolbar button:hover,
-toolbar.primary-toolbar button:hover,
-toolbar.primary-toolbar combobox button.combo:hover,
-.titlebar .titlebutton:hover,
-paned.horizontal notebook button.flat:hover,
-notebook button.flat.small-button:hover,
-colorchooser #add-color-button:hover {
-	color: @theme_text_color;
-	border: solid;
-	background-image: url("darkelements/button-hover.png");
-	border-image: url("darkelements/button-hover-border.png") 2 2 2 2 / 2px 2px 2px 2px stretch stretch;
-	border-width: 2px;
-	background-size: 100% 100%;
-	background-color: transparent;
-	transition: .2s ease-in-out; }
-/* Pressed-hover button */
-button:hover:active,
-button:checked:hover,
-button.flat:checked:hover,
-button.flat:active:hover,
-popover button:active:hover,
-popover button:checked:hover,
-menuitem button:checked:hover,
-menuitem button:active:hover,
-spinbutton button:active:hover,
-spinbutton button:checked:hover,
-statusbar button:active:hover,
-statusbar button:checked:hover,
-combobox button.combo:checked:hover,
-combobox button.combo:active:hover,
-toolbar button:checked:hover,
-toolbar button:active:hover,
-toolbar button.raised:active:hover,
-toolbar button.raised:checked:hover,
-toolbar combobox button.combo:checked:hover,
-toolbar combobox button.combo:active:hover,
-toolbar .raised button:active:hover,
-toolbar .raised button:checked:hover,
-toolbar.inline-toolbar button:active:hover,
-toolbar.inline-toolbar button:checked:hover,
-toolbar.primary-toolbar button:active:hover,
-toolbar.primary-toolbar button:checked:hover,
-toolbar.primary-toolbar combobox button.combo:checked:hover,
-toolbar.primary-toolbar combobox button.combo:active:hover,
-.titlebar .titlebutton:checked:hover,
-.titlebar .titlebutton:active:hover,
-colorchooser #add-color-button:active:hover,
-colorchooser #add-color-button:checked:hover {
-	color: @theme_text_color;
-	border: solid;
-	background-image: url("darkelements/button-pressed.png");
-	border-image: url("darkelements/button-hover-border.png") 2 2 2 2 / 2px 2px 2px 2px stretch stretch;
-	border-width:2px;
-	background-size: 100% 100%;
-	background-color: transparent;
-	transition: .2s ease-in-out; }
-/* Disabled button */
-button:disabled,
-button.flat:disabled,
-button:checked:disabled,
-combobox button.combo:disabled,
-toolbar combobox button.combo:disabled {
-	color: @insensitive_fg_color;
-	border: solid;
-	background-image: url("darkelements/column-header.png");
-	border-image: url("darkelements/button-normal-border.png") 2 2 2 2 / 2px 2px 2px 2px stretch stretch;
-	border-width:2px;
-	background-size: 100% 100%;
-	background-color: @insensitive_bg_color;
-	border-color:transparent; }
-/* Pushed + disabled button */
-button:checked:disabled,
-toolbar button:checked:disabled,
-toolbar combobox button.combo:checked:disabled {
-}
-/* Close/scrollbar buttons */
-paned.horizontal notebook button.flat,
-notebook button.flat.small-button {
-	color: @theme_text_color;
-	border: solid;
-	background-image: url("darkelements/button-normal.png");
-	border-image: url("darkelements/button-normal-border.png") 2 2 2 2 / 2px 2px 2px 2px stretch stretch;
-	border-width: 2px;
-	background-size: 100% 100%;
-	background-color: transparent;
-	padding: 0px; }
-paned.horizontal notebook button.flat:active,
-paned.horizontal notebook button.flat:checked,
-notebook button.flat.small-button:active,
-notebook button.flat.small-button:checked {
-	color: @theme_text_color;
-	border: solid;
-	background-image: url("darkelements/button-pressed.png");
-	border-image: url("darkelements/button-pressed-border.png") 2 2 2 2 / 2px 2px 2px 2px stretch stretch;
-	border-width: 2px;
-	background-size: 100% 100%;
-	background-color: transparent;
-	transition: .1s ease-in; }
-paned.horizontal notebook button.flat:active:hover,
-paned.horizontal notebook button.flat:checked:hover,
-notebook button.flat.small-button:active:hover,
-notebook button.flat.small-button:checked:hover {
-	color: @theme_text_color;
-	border: solid;
-	background-image: url("darkelements/button-pressed.png");
-	border-image: url("darkelements/button-hover-border.png") 2 2 2 2 / 2px 2px 2px 2px stretch stretch;
-	border-width: 2px;
-	background-size: 100% 100%;
-	background-color: transparent;
-	transition: .2s ease-in-out; }
-paned.horizontal notebook button.flat:hover,
-notebook button.flat.small-button:hover {
-	color: @theme_text_color;
-	border: solid;
-	background-image: url("darkelements/button-hover.png");
-	border-image: url("darkelements/button-hover-border.png") 2 2 2 2 / 2px 2px 2px 2px stretch stretch;
-	border-width: 2px;
-	background-size: 100% 100%;
-	background-color: transparent;
-	transition: .2s ease-in-out; }
-paned.horizontal notebook button.flat:disabled,
-paned.horizontal notebook button.flat:checked:disabled,
-notebook button.flat.small-button:disabled,
-notebook button.flat.small-button:checked:disabled {
-	color: @insensitive_fg_color;
-	border: solid;
-	background-image: url("darkelements/column-header.png");
-	border-image: url("darkelements/button-normal-border.png") 2 2 2 2 / 2px 2px 2px 2px stretch stretch;
-	border-width:2px;
-	background-size: 100% 100%;
-	background-color: @insensitive_bg_color;
-	border-color:transparent; 
-}
 
-/* Trough buttons? */
 trough,
 trough highlight,
 trough row,
 trough row:hover {
     background-image: linear-gradient(to bottom,
                       @trough_gradient_a,
-                      @trough_gradient_b 4px); }
+                      @trough_gradient_b 4px);
+}
+
 /* Flipped pushed button background for vertical progressbar through and the like */
 trough.vertical {
     background-image: linear-gradient(to right,
@@ -1760,7 +1707,63 @@ trough.vertical {
                       @trough_gradient_b 4px);
 }
 
+/* Prelight button background */
+button:hover,
+menuitem button:hover,
+spinbutton button:hover,
+combobox button.combo:hover,
+toolbar button:hover,
+toolbar button.raised:hover,
+toolbar .raised button:hover,
+toolbar combobox button.combo:hover,
+toolbar.primary-toolbar button:hover,
+toolbar.primary-toolbar combobox button.combo:hover,
+colorchooser #add-color-button:hover,
+popover.background button:hover,
+.titlebar .titlebutton:hover {
+	border: solid;
+	background-image: url("darkelements/button-hover.png");
+	border-image: url("darkelements/button-hover-border.png") 2 2 2 2 / 2px 2px 2px 2px stretch stretch;
+	border-width:2px;
+	background-size: 100% 100%;
+	transition: .2s ease-in-out; 
+}
 
+/* Pressed hover */
+button:hover:active,
+button:checked:hover,
+spinbutton button:active:hover,
+toolbar button:checked:hover,
+toolbar button:hover:active,
+toolbar button.raised:hover:active,
+toolbar button.raised:checked:hover,
+toolbar .raised button:hover:active,
+toolbar .raised button:checked:hover,
+toolbar.primary-toolbar button:hover:active,
+toolbar.primary-toolbar button:focus:hover:active,
+popover button:active:hover,
+toolbar.inline-toolbar button:hover:active {
+	border: solid;
+	background-image: url("darkelements/button-pressed.png");
+	border-image: url("darkelements/button-hover-border.png") 2 2 2 2 / 2px 2px 2px 2px stretch stretch;
+	border-width:2px;
+	background-size: 100% 100%;
+	transition: .2s ease-in-out; 
+}
+
+/* disabled button background */
+button:disabled,
+combobox button.combo:disabled,
+toolbar combobox button.combo:disabled {
+	color: @insensitive_fg_color;
+}
+
+/* Pushed + disabled button background */
+button:checked:disabled,
+toolbar button:checked:disabled,
+toolbar combobox button.combo:checked:disabled {
+    
+}
 
 /* Focused primary toolbar button background */
 toolbar.primary-toolbar button:focus {
@@ -2101,7 +2104,26 @@ notebook header.left tab:checked {
                       @notebook_active_tab_gradient_b);
 }
 
-/* Misc buttons */
+/* close button styling */
+paned.horizontal notebook button.flat,
+notebook button.flat.small-button {
+	padding: 0;
+	background-image: none;
+	border-image: none;
+	border-width:2px;
+	background-color: transparent;
+	border-color: transparent
+}
+
+paned.horizontal notebook button.flat:hover,
+notebook button.flat.small-button:hover{
+	border: solid;
+    background-image: url("darkelements/button-hover.png");
+    border-image: url("darkelements/button-hover-border.png") 2 2 2 2 / 2px 2px 2px 2px stretch stretch;
+    border-width:2px;
+	background-size: 100% 100%;
+}
+
 notebook header.top tabs arrow.up,
 notebook header.bottom tabs arrow.up {
     -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
@@ -2341,7 +2363,7 @@ scrollbar.vertical trough {
 	border-style: solid;
 }
 
-
+/* Vertical Scrollbar Buttons */
 scrollbar button,
 scrollbar .button {
  	min-height: 14px;
@@ -2349,7 +2371,6 @@ scrollbar .button {
 	padding: 0;
 	margin: 0;
 	background-color: transparent; }
-/* Vertical Scrollbar Buttons */
 scrollbar.vertical button.up,
 scrollbar.vertical .button.up {
 	border: 1px solid;
@@ -2361,6 +2382,7 @@ scrollbar.vertical button.down,
 scrollbar.vertical .button.down {
 	border: 1px solid;
 	background-image: url("darkelements/scrollbars/stepper-down.png") ;
+    /*background-color: @theme_base_color;*/
 	border-color: #000000;
 	background-size: 100% 100%;
 	color: transparent;  }
@@ -2871,7 +2893,7 @@ toolbar {
 }
 
 toolbar button {
-	padding: 2px 5px;
+    padding: 2px 5px;
 	background-color: transparent;
 }
 
@@ -3030,6 +3052,16 @@ dialog filechooser placessidebar.sidebar.frame viewport.frame list row.activatab
     padding: 4px 12px 4px 0px;
 }
 
+/* workaround for broken first/last-child logic with linked buttons
+   in pathbar with gtk+-3.18 *//*
+.path-bar.linked button.text-button {
+    border-right-width: 1px;
+    border-left-width: 1px;
+    border-radius: 2px;
+    padding: 4px;
+}
+*/
+
 .sidebar radio,
 .sidebar radio:focus,
 .sidebar radio:selected {
@@ -3102,9 +3134,7 @@ overlay.osd {
 }
 
 button.osd {
-	padding: 8px;
-	background-image: none;
-	border-image: none;
+    padding: 8px;
 }
 
 button.osd,
@@ -3116,6 +3146,11 @@ button.osd,
 button.osd:hover,
 button.osd:checked {
     background-color: shade(@osd_bg, 1.10);
+}
+
+button.osd {
+    background-image: none;
+    border-image: none;
 }
 
 button.osd:focus:hover:active {
@@ -4023,6 +4058,7 @@ actionbar {
 /*************
  * Popovers *
  *************/
+
 popover.background {
   background-clip: initial;
   margin: 10px;
@@ -4130,6 +4166,7 @@ popover separator {
 
 .popover.osd spinbutton,
 .popover.osd spinbutton entry {
+
 	color: @theme_base_color;
 }
 

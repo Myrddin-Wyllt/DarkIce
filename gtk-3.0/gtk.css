@@ -72,10 +72,6 @@
 
 @define-color notebook_border @button_border;
 
-
-@define-color switch_slider_color #111113;
-@define-color switch_slider_border #a5b8cc;
-
 @define-color highlighted_border @button_border;
 @define-color internal_element_color #888a85;
 @define-color internal_element_prelight #333333;
@@ -641,8 +637,6 @@ entry {
      * also applies to the progressbar.
      */
     padding: 4px 3px;
-    -GtkEntry-inner-border: 5px;
-    -GtkEntry-progress-border: 0;
     color: @theme_fg_color;
 }
 
@@ -1549,8 +1543,6 @@ spinbutton entry{
      * also applies to the progressbar.
      */
     padding: 4px 3px;
-    -GtkEntry-inner-border: 5px;
-    -GtkEntry-progress-border: 0;
     color: @entry_text_colo
 }
 
@@ -3496,60 +3488,58 @@ assistant .sidebar {
  * GtkSwitch *
  *************/
 switch {
+	font-size: 1px;
 	min-width: 74px;
 	min-height: 24px;
 	background-size: 74px 24px; }
 switch slider {
 	min-width: 34px;
-	min-height: 20px;
-	background-size: 34px 20px; }
-switch, switch slider {
+	min-height: 20px; }
+switch,
+switch slider,
+switch image,
+switch:disabled image,
+switch:backdrop image,
+switch:backdrop:disabled image,
+switch:hover image,
+switch:backdrop:hover image {
+	outline-color: transparent;
+	border: none;
+	box-shadow: none;
 	background-repeat: no-repeat;
 	background-position: center center;
-	color: transparent; /* on/off text */
+	color: transparent;
 }
+
 switch {
 	background-image: url("darkelements/switch/trough-off.png");
-	min-width: 74px;
-	min-height: 24px; 
-	transition: .3s ease-out; }
+	transition: .3s ease-in-out; }
 switch:checked,
 switch:backdrop:checked {
 	background-image: url("darkelements/switch/trough-on.png");
-	min-width: 74px;
-	min-height: 24px;
 	transition: .3s ease-in-out; }
 switch:disabled,
 switch:backdrop:disabled {
 	background-image: url("darkelements/switch/trough-off.png");
-	min-width: 74px;
-	min-height: 24px; 
 }
 
 switch slider {
-	background-image: url("darkelements/switch/sliderswitch.png");
-	min-width: 34px;
-	min-height: 20px; }
-/* Couldn't get this working
-switch:checked slider,
-switch:backdrop:checked slider {
-	background-image: url("darkelements/switch/sliderswitcher-enabled.png");
-	min-width: 34px;
-	min-height: 20px;
-	transition: .1s ease-in; } */
+	background-image: url("darkelements/switch/sliderswitch.png"); }
 switch:hover slider,
 switch:backdrop:hover slider,
 switch:checked:hover slider,
 switch:backdrop:checked:hover slider {
 	background-image: url("darkelements/switch/sliderswitch-hover.png");
-	min-width: 34px;
-	min-height: 20px; 
-	transition: .3s ease-in-out; }
+	transition: .2s ease-in-out; }
+switch slider:active,
+switch:checked slider:active,
+switch:backdrop slider:active,
+switch:backdrop:checked slider:active {
+	background-image: url("darkelements/switch/sliderswitch-pressed.png");
+	transition: .1s ease-out; }
 switch:disabled slider,
 switch:backdrop:disabled slider {
-	background-image: url("darkelements/switch/sliderswitch-disabled.png");
-	min-width: 34px;
-	min-height: 20px; 
+	background-image: url("darkelements/switch/sliderswitch-disabled.png"); 
 }
 
 /**************************

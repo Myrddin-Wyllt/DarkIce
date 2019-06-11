@@ -1,14 +1,15 @@
-DarkIce is a dark theme with an icy color scheme. Gradients & textures abound in this non-flat theme. The theme is based on DarkCold, but has diverged enough to be considered a different theme because of reworked art and many additions. Stay tuned, the best rendition of this theme is yet to come. I'll keep adding to DarkIce, so suggestions & criticism are welcome as are Pull Requests if you're a developer. If suggestions become frequent enough, I'll start a list of upcoming features for requests I'm working on adding.
-
 DarkIce GTK2 & GTK3 theme
 ========================
-Version: 1.2
+(logo.png)
+DarkIce is a dark theme with an icy color scheme. Gradients & textures abound in this non-flat theme. The theme is based on DarkCold, but has diverged enough to be considered a different theme because of reworked art and many additions. Stay tuned, the best rendition of this theme is yet to come. I'll keep adding to DarkIce, so suggestions & criticism are welcome as are Pull Requests if you're a developer. If suggestions become frequent enough, I'll start a list of upcoming features for requests I'm working on adding.
 
-*NOTE: For versions >1.2, you should overwrite the old userContent.css.
+NB: For those who are updating, you should overwrite the old userContent.css in your browser's chrome folder.
+
+Version: 1.3
 
 Minimum GTK 3 version: >=3.20
-
-Tested on: Arch Linux, gtk3.24.4, & XFCE4.13.x
+Maximum xfwm font size: 12
+Tested on: Arch Linux, gtk3.24.8, & XFCE4.13.x
 
 Based on: http://gnome-look.org/content/show.php/DarkCold?content=143165
 
@@ -28,11 +29,10 @@ Installation system-wide:
 ======================
 Download
 Extract
-Copy extracted DarkIce folder to ~/.themes
+Copy extracted DarkIce folder to /usr/share/themes
 
 Gecko-based Browser Compatibility:
 ===============================
-*NOTE: For DarkIce versions >1.2, you should overwrite the old userContent.css
 Copy the userContent.css file inside the theme directory into your browser's chrome directory.
 If your browser's profile directory is missing the chrome subdirectory, create it and put the userContent.css file in there.
 
@@ -43,6 +43,7 @@ For Palemoon:
 userContent.css -> ~/.moonchild productions/pale moon/"ReplaceThisWithTheRandomProfileName"/chrome
 
 
+NB: If updating, you should overwrite the old userContent.css
 
 
 Changes from DarkCold:
@@ -58,7 +59,8 @@ Changes from DarkCold:
 + Refactored userContent.css for improved website compatibility in Gecko-based browsers
 + xfwm theme now integrated and included
 + xfwm title text shadow frame added and title text recolored for further contrast improvements
-
++ xfwm titlebar top is now resizable across the entire width (NB: Font size cannot be greater than 12)
++ Added proper gecko-based browser theming (NB: If you want a specific website fixed, mention it here or on github)
 
 Known Issues:
 =============

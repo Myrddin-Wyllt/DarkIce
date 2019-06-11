@@ -1,28 +1,232 @@
-/* Many websites have poor contrast (i.e., black text w/ black background) */
 input,
-textarea,
-select {
+textarea {
 	-moz-appearance: none;
+	border-width: 1px;
 	background-color: white;
 	color: black;
 }
-
-button, 
+select,
+option {
+	border: initial !important;
+	background-color: black;
+	color: #6EBEFE !important;
+	border-radius: initial !important;
+	background: initial !important;
+}
+button,
 input[type="reset"],
 input[type="button"],
 input[type="submit"],
 input[type="radio"],
 input[type="checkbox"] { 
-	background-color: black;
-	border-width: 1px !important;
-	color: #6EBEFE;
+	background-color: white;
+	border-width: 1px;
+	color: black;
 }
-
-/* Quantity steppers need room esp. on sites with broken CSS */
-*.qty {
+/* Palemoon */
+button#errorTryAgain,
+button#getMeOutOfHereButton {
+	color: #6EBEFE !important;
+}
+label select#st,
+label select#sk,
+label select#sd {
+	background-color: black !important;
+}
+/* uBlock Origin */
+p button#proceedTemporary,
+p button#proceedPermanent,
+p button#back,
+p button#bye {
+	color: #6EBEFE !important;
+}
+/* ebay */
+span.listbox select.listbox__control.undefined,
+select.msku-sel option {
+	background-color: black !important;
+}
+span.listbox_icon {
+	color: white !important;
+}
+select.x-refine__text-list__select {
+	width: auto !important;
+	max-width: 150px !important;
+	margin-left: 5px !important;
+}
+/* Newegg */
+div#TTexUgcR select#TT3sortBox,
+label.form-select select#Order_top option,
+label.form-select select option {
+	background-color: black !important;
+}
+/* Sears */
+select#narrowByCategory.ng-pristine.ng-valid {
+	color: black !important
+}
+/* PCM */
+select.toolbarSortBy,
+select.view.toolbarViewBy,
+select.qty-text.qty-input {
+	color: black !important
+}
+/* EVGA */
+select#state.de,
+select#retailer.de {
+	background-color: black !important;
+}
+/* Micro Center */
+form#wishlist select#wishlistID,
+form#mainStoreSelection select,
+form#storeselector select,
+form#storeselector option,
+form.sort select#lblsort,
+form.sort select#ltlsort2,
+div.cart_shippingOptions select#ContentPlaceHolder1_ucOrderSummary_cbxShippingOption,
+div.cart_selectStore select#ContentPlaceHolder1_ucOrderSummary_ddlShipOut.aspNetDisabled {
+	background-color: black !important;
+}
+/* organiccottonplus */
+select#rate.qty-select {
+	color: black !important;
+}
+/* Outlet PC */
+select#sortby.sorting,
+select#page_size.sorting,
+div#contactbox form select.contact-subject {
+	color: black !important;
+}
+select#sortby.sorting option {
+	background-color: black !important;
+}
+/* MSI */
+select#product-ajax-list-sort.form-control {
+	background-color: black !important;
+}
+/* King Arthur's Flour */
+form.sort-results-form select.formFocus,
+form.sort-reviews-form#sort-reviews-form select#sort {
+	background-color: black !important;
+}
+/* Lehmans */
+li.child-qty input.qty.form-control,
+div.form-group input.qty.form-control {
+	color: #6EBEFE !important;
+	background-color: black !important;
 	width: 60px !important;
 	padding-bottom: 0px !important;
 	padding-right: 0px !important;
 	padding-left: 1px !important;
 	padding-top: 0px !important;
+}
+/* Archlinux */
+div select#type, div select#sev, div select#pri, div select#due, div select#reported, div select#cat,
+form#projectselectorform select {
+	background-color: black !important;
+}
+/* KDE */
+div.bz_query_edit button#edit_search {
+	color: #6EBEFE !important;
+}
+/* Redhat */
+div.toc select.pageSelect {
+	background-color: black !important;
+}
+/* Gentoo */
+span.gensmall select {
+	background-color: black !important;
+}
+/* Bestbuy */
+select#sort-by-select.c-dropdown.v-small.sort-dropdown {
+	background-color: black !important;
+}
+/* Google */
+div#gt-lang-src select#gt-sl.jfk-button.jfk-button-standard.nje,
+div#gt-lang-tgt select#gt-tl.jfk-button.jfk-button-standard.nje {
+	background-color: black !important;
+}
+/* LEVELONETECHS */
+div.form-item.form-item-field-video-category-tid.form-type-select.form-group select#edit-field-video-category-tid.form-control.form-select {
+	background-color: black !important;
+}
+/* REALTEK */
+div#productline-block.form-group select#productline {
+	background-color: black !important;
+}
+/* GamingOnLinux */
+div.fnone select.wrap.ays-ignore.pagination,
+div.col-3 div.box div.body form select {
+	background-color: black !important;
+}
+/* Crucial */
+div.styled-select.small select#manufacturer {
+	background-color: black !important;
+}
+/* MyDigitalDiscount */
+div.sort-box table tbody tr td form select {
+	background-color: black !important;
+}
+/* Distrowatch */
+tbody tr td form select {
+	background-color: black !important;
+}
+/* PCPartPicker */
+div.subTitle__form form select#history_days {
+	background-color: black !important;
+}
+/* Amazon */
+select#searchDropdownBox.nav-search-dropdown.searchSelect option,
+div.a-column.a-span12.a-text-left span.a-dropdown-container select#quantity.a-native-dropdown option {
+	background-color: black !important;
+}
+/* TigerDirect */ 
+div.itemsSortby select option {
+	background-color: black !important;
+}
+/* DIRECTRON */
+div.sort-by select option {
+	background-color: black !important;
+}
+/* Staples */
+div.searchTools__sortByContainer form select {
+	height: auto !important;
+	max-height: auto !important;
+	padding: 0 !important;
+}
+div.searchTools__sortByContainer form select option {
+	background-color: black !important;
+}
+/* Walmart */
+span.elc-icon::before,
+span.elc-icon-down-arrow::before {
+	content: none !important;
+}
+select.field-input.field-input--secondary {
+	-moz-appearance: menulist !important;
+	text-align: -moz-center !important;
+	margin-top: 1em !important;
+	padding: 0 !important;
+}
+select.field-input.field-input--secondary option {
+	background-color: black !important;
+}
+
+/* elementvape */
+select.product-custom-option option {
+	background-color: black !important;
+}
+/* legendgadget */
+select#selectProductSort option,
+select#nb_item.form-control option {
+	background-color: black !important;
+}
+/* TechPowerUp */
+div.jsonly.pagesel select#pagesel option {
+	background-color: black !important;
+}
+
+/* Yarrr! */
+form#q select#category option,
+form#q select#category optgroup,
+form#q select#category optgroup option {
+	background-color: black !important;
 }

@@ -6,11 +6,11 @@ DarkIce is a dark theme with an icy color scheme. Gradients & textures abound in
 
 NB: For those who are updating, you should overwrite the old userContent.css in your browser's chrome folder.
 
-Version: 1.3
+**Version: 1.3**
 
-Minimum GTK 3 version: >=3.20
-Maximum xfwm font size: 12
-Tested on: Arch Linux, gtk3.24.8, & XFCE4.13.x
++ Minimum GTK 3 version: >=3.20
++ Maximum xfwm font size: 12
++ Tested on: Arch Linux, gtk3.24.8, & XFCE4.13.x
 
 Based on: http://gnome-look.org/content/show.php/DarkCold?content=143165
 

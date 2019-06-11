@@ -1,6 +1,7 @@
 DarkIce GTK2 & GTK3 theme
 ========================
-(logo.png)
+![](./logo.png)
+
 DarkIce is a dark theme with an icy color scheme. Gradients & textures abound in this non-flat theme. The theme is based on DarkCold, but has diverged enough to be considered a different theme because of reworked art and many additions. Stay tuned, the best rendition of this theme is yet to come. I'll keep adding to DarkIce, so suggestions & criticism are welcome as are Pull Requests if you're a developer. If suggestions become frequent enough, I'll start a list of upcoming features for requests I'm working on adding.
 
 NB: For those who are updating, you should overwrite the old userContent.css in your browser's chrome folder.

@@ -61,7 +61,7 @@ Changes from DarkCold:
 + xfwm theme now integrated and included
 + xfwm title text shadow frame added and title text recolored for further contrast improvements
 + xfwm titlebar top is now resizable across the entire width (NB: Font size cannot be greater than 12)
-+ Added proper gecko-based browser theming (NB: If you want a specific website fixed, mention it here or on github)
+
 
 Known Issues:
 =============
